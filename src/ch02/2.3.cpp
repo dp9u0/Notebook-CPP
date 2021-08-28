@@ -10,7 +10,7 @@ int main()
   std::cout << u - i << std::endl;  // 0
 
   std::cout << u2 - u << std::endl; // 32
-  std::cout << u - u2 << std::endl; // 4294967264 (10 + INT_MAX - 42)
+  std::cout << u - u2 << std::endl; // 4294967264 (10 + (INT_MAX + 1)  - 42) 其中 (INT_MAX + 1) 为 INT 的模
 
   int i3 = -32;
   unsigned u3 = i3;
