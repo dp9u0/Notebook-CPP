@@ -69,6 +69,18 @@ void declaration_define()
 }
 
 int a = 100;
+
+int reused = 42; // 全局作用域
+void scope()
+{
+  std::cout << reused << std::endl; // 输出 42
+
+  int reused = 100;
+  std::cout << reused << std::endl; // 输出 100
+
+  std::cout << ::reused << std::endl; // 输出 42
+}
+
 int main()
 {
   size_of_types();
@@ -78,5 +90,7 @@ int main()
   example_literal();
 
   declaration_define();
+
+  scope();
   return 0;
 }
