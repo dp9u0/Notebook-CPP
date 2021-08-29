@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Sales_item.h"
+
 void size_of_types()
 {
   std::cout << "size of 'bool' : " << sizeof(bool) << std::endl;
@@ -51,10 +53,30 @@ void example_literal()
   auto a17 = 10e-2;
 }
 
+// 变量初始化
+void init_variable()
+{
+
+  // std::cin >> int intput_value;
+  // 先声明再使用
+}
+
+void declaration_define()
+{
+  extern int a;
+  // extern int b = 100; // ‘b’ has both ‘extern’ and initializer
+  std::cout << a << std::endl;
+}
+
+int a = 100;
 int main()
 {
   size_of_types();
 
   int_to_float();
+
+  example_literal();
+
+  declaration_define();
   return 0;
 }
