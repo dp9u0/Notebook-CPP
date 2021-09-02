@@ -102,6 +102,26 @@ void point()
   std::cout << "example point" << std::endl;
 }
 
+void refer_to_point()
+{
+  std::cout << "example refer_to_point" << std::endl;
+  int i = 100;
+  int i2 = 1000;
+  int *p = &i2;
+  std::cout << p << std::endl;
+  std::cout << *p << std::endl;
+  int *&r = p;
+
+  std::cout << r << std::endl;
+  std::cout << *r << std::endl;
+
+  r = &i; // p = &i;
+  *p = 10000;
+
+  std::cout << p << std::endl;
+  std::cout << *p << std::endl;
+}
+
 int main()
 {
   size_of_types();
@@ -115,5 +135,7 @@ int main()
   scope();
 
   refer();
+
+  refer_to_point();
   return 0;
 }
