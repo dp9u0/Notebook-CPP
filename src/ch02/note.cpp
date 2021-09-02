@@ -122,6 +122,38 @@ void refer_to_point()
   std::cout << *p << std::endl;
 }
 
+void reference_to_const()
+{
+  std::cout << "example reference_to_const" << std::endl;
+
+  const int ci = 100;
+  const int &rci = ci;
+  // int &ri = ci; // 将 "int &" 类型的引用绑定到 "const int" 类型的初始值设定项时，限定符被丢弃
+  // rci = 200; // 表达式必须是可修改的左值
+
+  int i2 = 100;
+  const int &rci2 = i2;
+  // rci2 = 200; // 表达式必须是可修改的左值
+}
+
+void pointer_to_const()
+{
+  std::cout << "example pointer_to_const" << std::endl;
+  const int ci = 100;
+  // int *pci = &ci; // "const int *" 类型的值不能用于初始化 "int *" 类型的实体C
+  const int *pci = &ci;
+  // *pci = 100; // 表达式必须是可修改的左值
+}
+
+void const_pointer()
+{
+  std::cout << "example const_pointer" << std::endl;
+  int i = 100;
+  int const *pi = &i;
+  const int ci = 100;
+  const int const *pci = &ci;
+}
+
 int main()
 {
   size_of_types();
