@@ -97,6 +97,11 @@ void refer()
   std::cout << i1 << std::endl; // 输出 300
 }
 
+void point()
+{
+  std::cout << "example point" << std::endl;
+}
+
 int main()
 {
   size_of_types();
