@@ -188,6 +188,64 @@ void const_expr_pointer()
   constexpr const int *q1 = nullptr;
 }
 
+void type_def()
+{
+  std::cout << "example type_def" << std::endl;
+  typedef double mydouble;
+  mydouble a;
+
+  using mydouble2 = double;
+  mydouble2 a2;
+  cout << a << endl;
+  cout << a2 << endl;
+
+  string str("this is a test string");
+  typedef char *pstring;
+  const pstring mystring = nullptr; // 相当于 char * const mystring 而不是 const char * mystring;
+
+  typedef const char *const_string;
+
+  const_string cs1 = nullptr;
+  cs1 = nullptr;
+
+  typedef char *const string_const;
+
+  string_const sc2 = nullptr;
+  // sc2 = nullptr; // 表达式必须是可修改的左值
+}
+
+void auto_type()
+{
+  int i = 1;
+  const int ci = i;
+  const int &ri = ci;
+  const int *pi = &ci;
+  const int *const cpi = &ci;
+
+  auto a = i;
+  auto b = ci;        // int 忽略顶层 const
+  const auto cb = ci; // 手动增加 const
+  auto c = ri;        // int
+  auto d = pi;        // const int * 保留底层 const
+  auto f = cpi;       // const int * 忽略顶层 const
+}
+
+void decl_type()
+{
+  int i = 0;
+
+  decltype(i = 10) a = i; // int & 赋值产生引用
+  decltype(i + 10) b;     // int 
+
+  int *p = nullptr;
+  decltype(*p) c = i; // int
+  decltype(p) d = &a; // int
+
+  // 保留顶层 const
+  const int j = 100;
+  decltype(j) e = i; // const int
+}
+
 int main()
 {
   size_of_types();
@@ -203,5 +261,7 @@ int main()
   refer();
 
   refer_to_point();
+
+  type_def();
   return 0;
 }
