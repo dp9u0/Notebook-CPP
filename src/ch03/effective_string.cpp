@@ -63,9 +63,46 @@ void test2()
   show_string(mes);
 }
 
+void test3()
+{
+  string a = "";
+  string s;
+  string b = "";
+  printf("address of a:%p\n", &a);
+  printf("address of s:%p\n", &s);
+  auto cstr = s.c_str();
+  printf("address of s.c_str():%p\n", cstr);
+  printf("address of b:%p\n", &b);
+
+  cout << " -------------------------- " << endl;
+
+  s = "123456789012345";
+
+  cstr = s.c_str();
+  printf("address of a:%p\n", &a);
+  printf("address of s:%p\n", &s);
+  printf("address of s.c_str():%p\n", cstr);
+  cstr++;
+  printf("%p:%c\n", cstr, *cstr);
+  cstr++;
+  printf("%p:%c\n", cstr, *cstr);
+  printf("address of b:%p\n", &b);
+
+  cout << " -------------------------- " << endl;
+  s = "12345678901234567890";
+
+  cstr = s.c_str();
+  printf("address of a:%p\n", &a);
+  printf("address of s:%p\n", &s);
+  printf("address of s.c_str():%p\n", cstr);
+  printf("address of b:%p\n", &b);
+}
+
 int main()
 {
-  test1();
-  test2();
+  // test1();
+  // test2();
+
+  test3();
   return 0;
 }
