@@ -14,7 +14,20 @@ void string_io()
   cout << s2 << endl;
 }
 
+void string_op()
+{
+  cout << " ---------- string_op ---------- " << endl;
+  string s = "this is a test string";
+  auto c = s[0];
+  c = 'T';
+  cout << s << endl;
+  auto &rc = s[0];
+  rc = 'T';
+  cout << s << endl;
+}
+
 int main()
 {
   string_io();
+  string_op();
 }
