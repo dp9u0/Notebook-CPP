@@ -57,10 +57,58 @@ void vector_op()
   cout << endl;
 }
 
+void iterator_sample()
+{
+  cout << " ---------- iterator_sample ---------- " << endl;
+  string str = "this is a test string";
+  for (auto it = str.begin(); it != str.end(); ++it)
+  {
+    *it = toupper(*it);
+  }
+  cout << str << endl;
+}
+
+void middle_of_iterator()
+{
+  cout << " ---------- middle_of_iterator ---------- " << endl;
+  string str = "this is a test string";
+  auto first = str.begin();
+  auto middle = first + str.size() / 2;
+  auto c = *middle;
+  cout << "middle of str is :" << *middle << endl;
+}
+
+void array_init()
+{
+  int is1[] = {1, 2, 3};
+  string strs1[] = {""};
+  char cs1[] = "this ii a string";
+}
+
+void some_define_array()
+{
+  int array[10];
+  int *ptrs[10];             // 10 个 指针数组
+  int(*pArray)[10] = &array; // 指向10个int 数组的指针
+  int(&rArray)[10] = array;  // 引用
+  int *(&pArray)[10] = ptrs; // 指向 10 个指针数组的引用
+}
+
+void begin_end_array()
+{
+  int ia[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+  auto first = begin(ia);
+  auto last = end(ia);
+}
+
 int main()
 {
   // string_io();
   // string_op();
   // vector_init();
-  vector_op();
+  // vector_op();
+  // iterator_sample();
+  // middle_of_iterator();
+  array_init();
+  some_define_array();
 }
