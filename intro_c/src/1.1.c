@@ -2,7 +2,6 @@
 
 int main()
 {
-
   char a = 'a';
   int size_of_char = sizeof(a);
   printf("size of char is %d\n", size_of_char);
