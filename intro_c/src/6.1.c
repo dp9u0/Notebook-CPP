@@ -1,14 +1,3 @@
-# 预处理
-
-## \#include
-
-## \#define
-
-字符串替换
-
-`#define 宏名(形参列表) 字符串`
-
-```c
 #define MUL1(a, b) a *b
 #define MUL2(a, b) (a) * (b)
 #define MUL3(a, b) ((a) * (b))
@@ -26,8 +15,8 @@ int main(int argc, char const *argv[])
   char *str1 = STR(this is a string);
   int r5 = JOIN(1, e, 5);
   printf("%d,%d,%d,%d,%s,%d\n", r1, r2, r3, r4, str1, r5);
-  
+  printf("Date : %s %s\n", __DATE__, __TIME__);
+  printf("File : %s\n", __FILE__);
+  printf("Line : %d\n", __LINE__);
   return 0;
 }
-
-```
