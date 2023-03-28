@@ -1,0 +1,19 @@
+[Sample1]fputc from stdio,fputc to output.txt ...
+1234567890abcdefghijklmnopqrstuvwxyz
+[Sample2]fgetc from input.txt, fputc to output.txt ...
+this is a text file!
+first line of this file.
+this is a long long long long long long long long long long long long long long long long long long long long long long long long long long line.
+end of this file;
+[Sample3]fgets from input.txt, fputs to output.txt ...
+this is a text file!
+first line of this file.
+this is a long long long long long long long long long long long long long long long long long long long long long long long long long long line.
+end of this file;
+[Sample4]fscanf from input.txt, fprintf to output.txt ...
+name:aaa,age:19,score:88.989998
+name:bbb,age:19,score:88.000000
+name:ccc,age:19,score:88.000000
+name:ddd,age:19,score:87.000000
+name:eee,age:19,score:99.000000
+name:fff,age:19,score:100.000000
