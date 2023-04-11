@@ -98,11 +98,31 @@ void test3()
   printf("address of b:%p\n", &b);
 }
 
+void test4()
+{
+  cout << " -------------test4------------- " << endl;
+  string a = "123456";
+  auto cstr = a.c_str();
+  printf("address of a: %p\n", &a);
+  printf("address of a.cstr: %p\n", cstr);
+
+  a += "789012345678";
+  auto cstr2 = a.c_str();
+  printf("address of a: %p\n", &a);
+  printf("address of a.cstr: %p\n", cstr2);
+
+  a += "789012345678";
+  auto cstr3 = a.c_str();
+  printf("address of a: %p\n", &a);
+  printf("address of a.cstr: %p\n", cstr3);
+}
+
 int main()
 {
-  // test1();
-  // test2();
-
+  test1();
+  test2();
   test3();
+
+  test4();
   return 0;
 }
