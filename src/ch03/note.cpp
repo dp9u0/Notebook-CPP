@@ -33,9 +33,44 @@ void example_02()
   }
 }
 
+void example_03()
+{
+  string str = "this is a string";
+  auto begin = str.begin(), end = str.end();
+  if (begin != end)
+  {
+    auto &first = *begin;
+    first = toupper(first);
+  }
+  cout << str << endl;
+}
+
+int global_val = 100;
+
+int &func1()
+{
+  return global_val;
+}
+
+int &func2()
+{
+  int a = 100;
+  return a;
+}
+
+// int &func3()
+// {
+//   return 100;
+// }
+
+void example_04()
+{
+}
+
 int main()
 {
   // example_01();
-  example_02();
+  // example_02();
+  example_03();
   return 0;
 }
