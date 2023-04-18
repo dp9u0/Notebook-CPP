@@ -1,0 +1,1 @@
+int increment_once();
