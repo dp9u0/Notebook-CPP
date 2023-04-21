@@ -74,6 +74,14 @@ void example04()
   Dog d8 = Dog{10, 10};
 }
 
+void example05()
+{
+
+#ifdef NDEBUG
+  std::cerr << "func name " << __func__ << std::endl;
+#endif
+}
+
 int main(int argc, char const *argv[])
 {
   example01("this is a string", {"test1", "test2", "test3", "test4", "test5", "test6"});
@@ -83,5 +91,6 @@ int main(int argc, char const *argv[])
   (*example03()) = 300;
   std::cout << global << std::endl;
   example04();
+  example05();
   return EXIT_SUCCESS;
 }
