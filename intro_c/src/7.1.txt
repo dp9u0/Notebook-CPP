@@ -1,4 +1,0 @@
-this is a text file!
-first line of this file.
-this is a long long long long long long long long long long long long long long long long long long long long long long long long long long line.
-end of this file;
